@@ -10,7 +10,7 @@ micronaut:
     enabled: true
 datasources:
   default:
-    url: jdbc:postgresql://posts-db:5555/posts
+    url: jdbc:postgresql://posts-db:5432/posts
     driverClassName: org.postgresql.Driver
     username: postgres
     password: ''

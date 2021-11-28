@@ -10,7 +10,7 @@ micronaut:
         step: PT1M
 datasources:
   default:
-    url: jdbc:postgresql://comments-db:4444/comments
+    url: jdbc:postgresql://comments-db:5432/comments
     driverClassName: org.postgresql.Driver
     username: postgres
     password: ''

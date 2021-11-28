@@ -5,8 +5,11 @@ services:
     build:
       context: ./posts/
       dockerfile: Dockerfile
+    ports:
+      - "8001:8080"
     depends_on:
       - posts-db
+      - kafka
   posts-db:
     image: postgres:14.1-alpine
     ports:
@@ -19,8 +22,11 @@ services:
     build:
       context: ./comments/
       dockerfile: Dockerfile
+    ports:
+      - "8000:8080"
     depends_on:
       - comments-db
+      - kafka
   comments-db:
     image: postgres:14.1-alpine
     ports:
@@ -47,6 +53,12 @@ services:
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    healthcheck:
+      test:
+        [ "CMD", "kafka-topics.sh", "--list", "--zookeeper", "zookeeper:2181" ]
+      interval: 30s
+      timeout: 10s
+      retries: 4
   prometheus:
     image: prom/prometheus:v2.31.1
     ports:
