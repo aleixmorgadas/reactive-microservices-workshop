@@ -25,6 +25,7 @@ micronaut {
 
 dependencies {
     kapt("io.micronaut:micronaut-http-validation")
+    kapt("io.micronaut.openapi:micronaut-openapi")
     implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut:micronaut-management")
     implementation("io.micronaut:micronaut-runtime")

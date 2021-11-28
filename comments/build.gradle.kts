@@ -32,6 +32,7 @@ dependencies {
     implementation("io.micronaut:micronaut-tracing")
     implementation("io.micronaut.flyway:micronaut-flyway")
     implementation("io.micronaut.kafka:micronaut-kafka")
+    implementation("io.micronaut.kotlin:micronaut-kotlin-extension-functions")
     implementation("io.micronaut.kotlin:micronaut-kotlin-runtime")
     implementation("io.micronaut.micrometer:micronaut-micrometer-core")
     implementation("io.micronaut.micrometer:micronaut-micrometer-registry-prometheus")
