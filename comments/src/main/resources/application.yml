@@ -10,7 +10,7 @@ micronaut:
         step: PT1M
 datasources:
   default:
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://localhost:4444/comments
     driverClassName: org.postgresql.Driver
     username: postgres
     password: ''
@@ -20,5 +20,5 @@ tracing:
     http:
       url: http://localhost:9411
     sampler:
-      probability: 0.1
+      probability: 1
 kafka.bootstrap.servers: localhost:9092

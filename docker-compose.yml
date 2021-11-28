@@ -1,5 +1,12 @@
 version: '3.8'
 services:
+  posts:
+    profiles: [ "application" ]
+    build:
+      context: ./posts/
+      dockerfile: Dockerfile
+    depends_on:
+      - posts-db
   posts-db:
     image: postgres:14.1-alpine
     ports:
@@ -7,6 +14,13 @@ services:
     environment:
       POSTGRES_DB: posts
       POSTGRES_HOST_AUTH_METHOD: trust
+  comments:
+    profiles: [ "application" ]
+    build:
+      context: ./comments/
+      dockerfile: Dockerfile
+    depends_on:
+      - comments-db
   comments-db:
     image: postgres:14.1-alpine
     ports:
@@ -48,3 +62,7 @@ services:
     volumes:
       - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
       - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
