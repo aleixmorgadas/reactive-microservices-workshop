@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: dev.aleixmorgadas.reactivemicroservicesworkshop
+testFramework: junit
+sourceLanguage: kotlin
+buildTool: gradle_kotlin
+features: [annotation-api, app-name, flyway, gradle, http-client, jdbc-hikari, junit, kafka, kotlin, kotlin-application, log4j2, management, micrometer, micrometer-prometheus, netty-server, openapi, postgres, readme, shade, testcontainers, tracing-zipkin, views-thymeleaf, yaml]
