@@ -22,3 +22,11 @@ Here, we assume (obviously they don't :joy:) that `Posts` and `Comments` are eno
 serive.
 
 ![architecture](./docs/assets/simplistic-architecture.png)
+
+## Monitoring
+
+At few time, we realise we need to understand what's going on inside our microservices. That's why we add monitoring
+tools like [Prometheus](https://prometheus.io/)
+and [Grafana](https://grafana.com/)
+
+![monitoring](./docs/assets/monitoring.png)
