@@ -1,6 +1,11 @@
 micronaut:
   application:
     name: comments
+  server:
+    idle-timeout: 1s
+    read-idle-timeout: 1s
+    write-idle-timeout: 1s
+    read-timeout: 1
   metrics:
     enabled: true
     export:
