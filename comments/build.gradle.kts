@@ -56,7 +56,7 @@ dependencies {
     implementation("io.micronaut:micronaut-validation")
 
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
-
+    implementation("pl.tkowalcz.tjahzi:log4j2-appender:0.9.17")
 }
 
 

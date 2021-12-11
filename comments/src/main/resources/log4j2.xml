@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="DEBUG">
+<Configuration status="DEBUG" packages="pl.tkowalcz.tjahzi.log4j2">
     <Appenders>
         <Console name="LogToConsole" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
+        <Loki name="Loki">
+            <host>localhost</host>
+            <port>3100</port>
+
+            <JsonLayout>
+                <KeyValuePair key="timestamp" value="$${date:yyyy-MM-dd'T'HH:mm:ss.SSSZ}"/>
+            </JsonLayout>
+
+            <Label name="server" value="comments"/>
+        </Loki>
     </Appenders>
     <Loggers>
         <Logger name="dev.aleixmorgadas.reactivemicroservicesworkshop" level="debug" additivity="false">
             <AppenderRef ref="LogToConsole"/>
+            <AppenderRef ref="Loki"/>
         </Logger>
-        <Root level="error">
+        <Root level="INFO">
             <AppenderRef ref="LogToConsole"/>
+            <AppenderRef ref="Loki"/>
         </Root>
     </Loggers>
 </Configuration>

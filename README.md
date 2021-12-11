@@ -4,6 +4,10 @@
 
 A project to learn about Reactive Microservices experimenting with architectures and patterns
 
+## Setup
+
+`docker ps --format '- targets: ["{{.ID}}"]\n  labels:\n    container_name: "{{.Names}}"' > /etc/promtail/promtail-targets.yaml`
+
 ## Model
 
 The model is quite simple, you will find it too simple to be split between two Services. Yet, I consider this situation

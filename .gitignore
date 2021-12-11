@@ -233,3 +233,4 @@ modules.xml
 
 # End of https://www.toptal.com/developers/gitignore/api/jetbrains+all
 !gradle-wrapper.jar
+grafana/promtail/promtail-targets.yaml

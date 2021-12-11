@@ -7,7 +7,7 @@ datasources:
   - name: Postgres Comments
     access: proxy
     type: postgres
-    host: localhost:4444
+    host: comments:4444
     database: comments
     user: postgres
     password: ''
@@ -15,8 +15,12 @@ datasources:
   - name: Postgres Posts
     access: proxy
     type: postgres
-    host: localhost:5555
+    host: posts:5555
     database: posts
     user: postgres
     password: ''
     sslMode: disabled
+  - name: Loki
+    access: proxy
+    type: loki
+    url: loki:3100
