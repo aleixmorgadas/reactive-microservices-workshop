@@ -19,7 +19,8 @@ class CommentsController(
             HttpStatusCode.OK -> HttpResponse.ok(
                 listOf(
                     Comment(
-                        postId = "1",
+                        id = 1,
+                        postId = 1,
                         author = "Aleix Morgadas",
                         message = "So good"
                     )
@@ -31,7 +32,7 @@ class CommentsController(
                     .build()
             )
             HttpStatusCode.TIMEOUT -> {
-                Thread.sleep(5000)
+                Thread.sleep(10000)
                 return HttpResponse
                     .status<Any?>(HttpStatus.REQUEST_TIMEOUT)
                     .body(

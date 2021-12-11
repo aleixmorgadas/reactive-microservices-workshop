@@ -9,13 +9,13 @@
           class="font-mono">/api/comments</span></h1>
   <form action="/service-configuration" class="space-y-8 divide-y divide-gray-200" method="post">
     <div>
-      <label class="text-base font-medium text-gray-900"><a class="text-yellow-500" href="/api/comments"
+      <label class="text-base font-medium text-gray-900"><a class="text-purple-500" href="/api/comments"
                                                             target="_blank">HTTP Status</a></label>
       <p class="text-sm leading-5 text-gray-500">Which HTTP Status do you want to return?</p>
       <fieldset class="mt-4">
         <div class="space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10">
           <div class="flex items-center">
-            <input class="focus:ring-yellow-500 h-4 w-4 text-yellow-600 border-gray-300" id="OK" name="http-status-code"
+            <input class="focus:ring-purple-500 h-4 w-4 text-purple-600 border-gray-300" id="OK" name="http-status-code"
                    th:checked="${httpStatusCode.name() == 'OK'}" type="radio" value="OK">
             <label class="ml-3 block text-sm font-medium text-gray-700" for="OK">
               OK
@@ -23,7 +23,7 @@
           </div>
 
           <div class="flex items-center">
-            <input class="focus:ring-yellow-500 h-4 w-4 text-yellow-600 border-gray-300" id="INTERNAL_SERVER_ERROR"
+            <input class="focus:ring-purple-500 h-4 w-4 text-purple-600 border-gray-300" id="INTERNAL_SERVER_ERROR"
                    name="http-status-code" th:checked="${httpStatusCode.name() == 'INTERNAL_SERVER_ERROR'}" type="radio"
                    value="INTERNAL_SERVER_ERROR">
             <label class="ml-3 block text-sm font-medium text-gray-700" for="INTERNAL_SERVER_ERROR">
@@ -32,7 +32,7 @@
           </div>
 
           <div class="flex items-center">
-            <input class="focus:ring-yellow-500 h-4 w-4 text-yellow-600 border-gray-300" id="TIMEOUT"
+            <input class="focus:ring-purple-500 h-4 w-4 text-purple-600 border-gray-300" id="TIMEOUT"
                    name="http-status-code" th:checked="${httpStatusCode.name() == 'TIMEOUT'}" type="radio"
                    value="TIMEOUT">
             <label class="ml-3 block text-sm font-medium text-gray-700" for="TIMEOUT">
@@ -42,7 +42,7 @@
         </div>
       </fieldset>
     </div>
-    <button class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+    <button class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
             type="submit">
       Save
     </button>

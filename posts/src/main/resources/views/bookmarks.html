@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{layoutFile :: layout(~{::title}, ~{::section})}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Posts Bookmarks - Reactive Microservices Workshop</title>
+</head>
+<body>
+<section>
+    <h1 class="text-3xl font-bold leading-tight text-gray-900 py-5">Bookmarks</h1>
+    <ul class="list-disc">
+        <li><a th:href="@{'http://' + ${host} + ':8080'}">Posts Service</a></li>
+        <li><a target="_blank" th:href="@{'http://' + ${host} + ':8081'}">Comments Service</a></li>
+        <li><a target="_blank" th:href="@{'http://' + ${host} + ':3000'}">Grafana</a></li>
+        <li><a target="_blank" th:href="@{'http://' + ${host} + ':9090'}">Prometheus</a></li>
+        <li><a target="_blank" th:href="@{'http://' + ${host} + ':9411'}">Zipkin</a></li>
+    </ul>
+</section>
+</body>
+</html>
+

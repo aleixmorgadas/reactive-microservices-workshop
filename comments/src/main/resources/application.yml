@@ -2,10 +2,6 @@ micronaut:
   application:
     name: comments
   server:
-    idle-timeout: 1s
-    read-idle-timeout: 1s
-    write-idle-timeout: 1s
-    read-timeout: 1
     port: 8081
   metrics:
     enabled: true

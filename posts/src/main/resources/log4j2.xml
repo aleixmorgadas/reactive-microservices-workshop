@@ -12,5 +12,6 @@
         <Root level="error">
             <AppenderRef ref="LogToConsole"/>
         </Root>
+        <Logger name="io.micronaut.http.client" level="TRACE"/>
     </Loggers>
 </Configuration>
