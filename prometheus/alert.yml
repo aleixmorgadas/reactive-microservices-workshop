@@ -1,6 +1,16 @@
 groups:
-  - name: DemoAlerts
+  - name: Prometheus
     rules:
       - alert: InstanceDown
         expr: up{job="services"} < 1
-        for: 5m
+        for: 1m
+  - name: Comments
+    rules:
+      - alert: InstanceDown
+        expr: up{job="comments"} < 1
+        for: 1m
+  - name: Posts
+    rules:
+      - alert: InstanceDown
+        expr: up{job="posts"} < 1
+        for: 1m

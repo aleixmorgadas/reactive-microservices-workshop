@@ -1,0 +1,22 @@
+datasources:
+  - name: Prometheus
+    access: proxy
+    type: prometheus
+    url: http://prometheus:9090
+    isDefault: true
+  - name: Postgres Comments
+    access: proxy
+    type: postgres
+    host: localhost:4444
+    database: comments
+    user: postgres
+    password: ''
+    sslMode: disabled
+  - name: Postgres Posts
+    access: proxy
+    type: postgres
+    host: localhost:5555
+    database: posts
+    user: postgres
+    password: ''
+    sslMode: disabled

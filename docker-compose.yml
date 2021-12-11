@@ -6,7 +6,7 @@ services:
       context: ./posts/
       dockerfile: Dockerfile
     ports:
-      - "8001:8080"
+      - "8080:8080"
     depends_on:
       - posts-db
       - kafka
@@ -23,7 +23,7 @@ services:
       context: ./comments/
       dockerfile: Dockerfile
     ports:
-      - "8000:8080"
+      - "8081:8081"
     depends_on:
       - comments-db
       - kafka
@@ -62,7 +62,7 @@ services:
   prometheus:
     image: prom/prometheus:v2.31.1
     ports:
-      - "9000:9090"
+      - "9090:9090"
     volumes:
       - ./prometheus:/etc/prometheus
     command: --web.enable-lifecycle  --config.file=/etc/prometheus/prometheus.yml

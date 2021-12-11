@@ -6,6 +6,7 @@ micronaut:
     read-idle-timeout: 1s
     write-idle-timeout: 1s
     read-timeout: 1
+    port: 8081
   metrics:
     enabled: true
     export:
@@ -13,6 +14,9 @@ micronaut:
         enabled: true
         descriptions: true
         step: PT1M
+endpoints:
+  prometheus:
+    sensitive: false
 datasources:
   default:
     url: jdbc:postgresql://localhost:4444/comments

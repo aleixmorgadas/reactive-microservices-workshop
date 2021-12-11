@@ -8,6 +8,7 @@ import io.micronaut.http.annotation.Body
 import io.micronaut.http.annotation.Consumes
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
+import io.micronaut.http.annotation.Header
 import io.micronaut.http.annotation.Post
 import io.micronaut.views.View
 
@@ -32,5 +33,5 @@ class DashboardController(private val serviceConfigurationService: ServiceConfig
 
     @View("bookmarks")
     @Get("/bookmarks")
-    fun bookmarks() = HttpResponse.ok<Any>()
+    fun bookmarks(@Header("host") host: String) = HttpResponse.ok(mapOf("host" to host.split(":").first()))
 }
